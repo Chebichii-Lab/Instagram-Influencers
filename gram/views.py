@@ -6,7 +6,7 @@ def home(request):
     return render(request, 'home.html')
 
 
-@login_required(login_url='/accounts/login/')
+@login_required(login_url='/accounts/register/')
 def home(request):
        
     return render(request,"home.html")
