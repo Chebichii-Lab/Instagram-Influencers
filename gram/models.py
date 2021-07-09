@@ -10,7 +10,8 @@ from cloudinary.models import CloudinaryField
 class Profile(models.Model):
     picture = CloudinaryField('image')
     bio = models.TextField()
-
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
+    
     def __str__(self):
         return self.picture
 
