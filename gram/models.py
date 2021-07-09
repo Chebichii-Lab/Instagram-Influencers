@@ -12,6 +12,19 @@ class Profile(models.Model):
     bio = models.TextField()
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
 
+    def __str__(self):
+        return self.user
+
+    @classmethod
+    def update_image(cls, id, value):
+        cls.objects.filter(id=id).update(image=value)
+
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
+
 
 #class Images
 class Image(models.Model):
