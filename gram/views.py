@@ -4,14 +4,16 @@ from django.http import request
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
-
+from .models import Image, Profile
 # Create your views here.
 
 
 @login_required(login_url='/accounts/login/')
 def home(request):
+    images = Image.objects.all()
+    profile = Profile.objects.all()
        
-    return render(request,"home.html")
+    return render(request,"home.html",{'images': images, 'profile': profile})
 
 
 #Sign up Function
