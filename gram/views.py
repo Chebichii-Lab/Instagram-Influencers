@@ -1,5 +1,6 @@
-from django.http import request
 from gram.forms import SignupForm
+from django.http import request
+
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
@@ -26,5 +27,5 @@ def signup(request):
             return redirect('home')
     else:
         form = SignupForm()
-    return render(request, 'registration/signup.html', {'form': form})
+    return render(request, 'registration/registration_form.html', {'form': form})
 
