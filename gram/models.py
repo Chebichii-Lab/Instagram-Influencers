@@ -16,13 +16,13 @@ class Profile(models.Model):
         return self.user
 
     @classmethod
-    def update_image(cls, id, value):
-        cls.objects.filter(id=id).update(image=value)
+    def update_profile(cls, id, user, bio, picture):
+        cls.objects.filter(id=id).update(user=user, bio=bio, picture=picture)
 
-    def save_image(self):
+    def save_profile(self):
         self.save()
 
-    def delete_image(self):
+    def delete_profile(self):
         self.delete()
 
     @classmethod
@@ -44,8 +44,8 @@ class Image(models.Model):
         return self.image_name
 
     @classmethod
-    def update_image(cls, id, value):
-        cls.objects.filter(id=id).update(image=value)
+    def update_image_caption(cls, id, image_caption):
+        cls.objects.filter(id=id).update(image_caption=image_caption)
 
     def save_image(self):
         self.save()
