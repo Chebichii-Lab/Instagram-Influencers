@@ -21,3 +21,8 @@ class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ('username', 'email')
+
+class  NewPostForm(forms.ModelForm):
+    class Meta:
+        model = Image
+        exclude = ['profile', 'likes','comments']

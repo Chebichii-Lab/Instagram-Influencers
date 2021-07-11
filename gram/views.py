@@ -1,4 +1,4 @@
-from gram.forms import SignupForm, UserProfileForm, UserUpdateForm
+from gram.forms import NewPostForm, SignupForm, UserProfileForm, UserUpdateForm
 from django.http import request
 
 from django.shortcuts import redirect, render
@@ -10,10 +10,10 @@ from .models import Image, Profile
 
 @login_required(login_url='/accounts/login/')
 def home(request):
-    # profile = Profile.objects.all()
-   
-       
-    return render(request,'home.html')
+    profile = Profile.objects.all()
+    posts = Image.objects.all()
+
+    return render(request,'home.html',{"profile":profile, "posts":posts})
 
 
 #Sign up Function
@@ -56,3 +56,24 @@ def profile_update(request):
         profile_form = UserProfileForm(instance=request.user)
         user_form = UserUpdateForm(instance=request.user)
     return render(request, 'profile_edit.html', {"user_form":user_form,"profile_form": profile_form})
+
+@login_required(login_url='/accounts/login/')
+def newPost(request):
+    current_user = request.user
+    user_profile = Profile.objects.get(user = current_user)
+    if request.method == 'POST':
+        form = NewPostForm(request.POST, request.FILES)        
+        if form.is_valid():
+            image=form.cleaned_data.get('image')
+            image_caption=form.cleaned_data.get('image_caption')
+            image = Image(image = image,image_caption= image_caption, profile=user_profile)
+            image.save()
+            
+        else:
+            print(form.errors)
+
+        return redirect('home')
+
+    else:
+        form = NewPostForm()
+    return render(request, 'newPost.html', {"form": form})
