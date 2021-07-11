@@ -60,13 +60,13 @@ def profile_update(request):
 @login_required(login_url='/accounts/login/')
 def newPost(request):
     current_user = request.user
-    user_profile = Profile.objects.get(user = current_user)
+    
     if request.method == 'POST':
         form = NewPostForm(request.POST, request.FILES)        
         if form.is_valid():
             image=form.cleaned_data.get('image')
             image_caption=form.cleaned_data.get('image_caption')
-            image = Image(image = image,image_caption= image_caption, profile=user_profile)
+            image = Image(image = image,image_caption= image_caption)
             image.save()
             
         else:

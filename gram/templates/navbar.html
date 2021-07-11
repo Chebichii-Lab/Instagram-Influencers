@@ -12,6 +12,10 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="/">INSTAGRAM INFLUENCERS</a>
+                <img src="https://img.icons8.com/color/35/000000/instagram-new--v1.png" />
+                <a href="newpost/"><img
+                        src="https://img.icons8.com/material-outlined/35/000000/plus-2-math--v1.png" /></a>
+                <img src="https://img.icons8.com/ios/35/000000/facebook-messenger--v1.png" />
             </div>
             <!-- Adding a search form  -->
             <div class="col-sm-4 col-md-4 navbar-right">
@@ -31,25 +35,9 @@
             <!-- search form end -->
             <div class="col-sm-6 col-md-6">
                 {% if user.is_authenticated %}
-                <ul>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button"
-                            aria-expanded="false">Account
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="/">Home</a>
-                            </li>
-                            
-                            <li>
-                                <a href="/accounts/password/change">Change Password</a>
-                            </li>
-                            <li>
-                                <a href="/logout">Logout</a>
-                            </li>
-                        </ul>
-                    </li>
+                <!-- <ul> -->
+                    <a href="/" style="font-size: 20px; color: white;">Home</a>
+                    <a href="/logout" style="font-size: 20px; color: white;">Logout</a>
                 </ul>
                 {% else %}
                 <li>
