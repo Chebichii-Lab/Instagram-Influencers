@@ -67,4 +67,8 @@ class Comment(models.Model):
     def delete_comment(self):
         self.delete()
 
-   
+ # class Follows
+class Follow(models.Model):
+    follower = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='following')
+    followed = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='followers')
+  
