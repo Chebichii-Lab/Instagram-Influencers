@@ -13,7 +13,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
 
     def __str__(self):
-        return self.user
+        return self.user.username
 
     @classmethod
     def update_profile(cls, id, user, bio, picture):

@@ -10,10 +10,10 @@ from .models import Image, Profile
 
 @login_required(login_url='/accounts/login/')
 def home(request):
-    images = Image.objects.all()
-    profile = Profile.objects.all()
+    # profile = Profile.objects.all()
+   
        
-    return render(request,"home.html",{'images': images, 'profile': profile})
+    return render(request,'home.html')
 
 
 #Sign up Function
