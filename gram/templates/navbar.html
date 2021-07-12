@@ -8,14 +8,17 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+    <nav class="navbar navbar">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">INSTAGRAM INFLUENCERS</a>
-                <img src="https://img.icons8.com/color/35/000000/instagram-new--v1.png" />
-                <a href="newpost/"><img
-                        src="https://img.icons8.com/material-outlined/35/000000/plus-2-math--v1.png" /></a>
-                <img src="https://img.icons8.com/ios/35/000000/facebook-messenger--v1.png" />
+
+                <a class="navbar-brand" href="/" style="font-family: 'Satisfy', cursive; font-size: 30px;">INSTAGRAM </a>
+                <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" />
+              
             </div>
             <!-- Adding a search form  -->
             <div class="col-sm-4 col-md-4 navbar-right">
@@ -30,14 +33,19 @@
                         </div>
                     </div>
 
+
+
                 </form>
+                <a href="newpost/"><img
+                    src="https://img.icons8.com/material-outlined/35/000000/plus-2-math--v1.png" /></a>
+            <img src="https://img.icons8.com/ios/35/000000/facebook-messenger--v1.png" />
             </div>
             <!-- search form end -->
             <div class="col-sm-6 col-md-6">
                 {% if user.is_authenticated %}
-                <!-- <ul> -->
-                    <a href="/" style="font-size: 20px; color: white;">Home</a>
-                    <a href="/logout" style="font-size: 20px; color: white;">Logout</a>
+                <ul>
+                    <a href="/" style="font-size: 20px; color: black;">Home</a>
+                    <a href="/logout" style="font-size: 20px; color: black">Logout</a>
                 </ul>
                 {% else %}
                 <li>
