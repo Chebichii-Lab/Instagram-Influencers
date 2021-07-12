@@ -16,7 +16,7 @@
         <div class="container-fluid">
             <div class="navbar-header">
 
-                <a class="navbar-brand" href="/" style="font-family: 'Satisfy', cursive; font-size: 30px;">INSTAGRAM </a>
+                <a class="navbar-brand" href="/" style="font-family: 'Satisfy', cursive; font-size: 30px; color: black; font-weight: bold;">INSTAGRAM </a>
                 <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" />
               
             </div>
@@ -45,8 +45,9 @@
             <div class="col-sm-6 col-md-6">
                 {% if user.is_authenticated %}
                 <ul>
-                    <a href="/" style="font-size: 20px; color: black;">Home</a>
-                    <a href="/logout" style="font-size: 20px; color: black">Logout</a>
+                    <a href="/" style="font-size: 30px; color: black; font-family: 'Satisfy', cursive; ">Home</a>
+                    <br>
+                    <a href="/logout" style="font-size: 30px; color: black; font-family: 'Satisfy', cursive;">Logout</a>
                 </ul>
                 {% else %}
                 <li>
