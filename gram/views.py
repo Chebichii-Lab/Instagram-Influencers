@@ -67,7 +67,7 @@ def newPost(request):
             image=form.cleaned_data.get('image')
             image_caption=form.cleaned_data.get('image_caption')
             image = Image(image = image,image_caption= image_caption)
-            image.save()
+            image.save_image()
             
         else:
             print(form.errors)
