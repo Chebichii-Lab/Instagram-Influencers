@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {%block content%}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
 <style>
     #profile {
         width: 150px;
@@ -8,38 +12,46 @@
         border-radius: 50%;
     }
 </style>
-<div class="col-sm-6 m-auto ">
-    <div class=" content-section container" style="padding-top: 100px;">
-        <div class="media">
-            <div class="col-sm-4">
-                <div id="profile" class="rounded-circle">
-                    <img style="width: 120%; height: 120%;" src="{{user.profile.picture.url }}" alt="profile_photo">
-                </div>
-            </div>
-            <hr>
-            <div class="media-body">
-                <h2>{{user.username}}</h2>
-                <p>{{user.email}}</p>
-                <p>{{user.profile.bio}}</p>
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>Following</p>
+<style>
+    #background2{
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+<div class="container" id="background2">
+    <div class="col-sm-6 m-auto ">
+        <div class=" content-section container" style="padding-top: 100px;">
+            <div class="media">
+                <div class="col-sm-4">
+                    <div id="profile" class="rounded-circle">
+                        <img style="width: 120%; height: 120%;" src="{{user.profile.picture.url }}" alt="">
                     </div>
-                    <div class="col-md-6">
-                        <p>Followers</p>
-                    </div>
-                    <br>
-                   
                 </div>
                 <hr>
-                <a href="{%url 'change_profile'%}">
-                    <button class="btn btn-success">Edit Profile</button>
-                </a>
+                <div class="media-body">
+                    <h2 style="font-family: 'Satisfy', cursive; color: white; font-size: 40px;">{{user.username}}</h2>
+                    <p style="font-family: 'Satisfy', cursive; color: white; font-size: 30px;">{{user.email}}</p>
+                    <p>{{user.profile.bio}}</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p style="font-family: 'Satisfy', cursive; color: white; font-size: 25px;">Following</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p style="font-family: 'Satisfy', cursive; color: white; font-size: 25px;">Followers</p>
+                        </div>
+                        <br>
 
+                    </div>
+                    <hr>
+                    <a href="{%url 'change_profile'%}">
+                        <button class="btn btn-success">Edit Profile</button>
+                    </a>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 </div>
 {%endblock content%}
