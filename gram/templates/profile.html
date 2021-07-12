@@ -7,18 +7,13 @@
         overflow: hidden;
         border-radius: 50%;
     }
-
-    img {
-        width: 120%;
-        height: 120%;
-    }
 </style>
 <div class="col-sm-6 m-auto ">
     <div class=" content-section container" style="padding-top: 100px;">
         <div class="media">
             <div class="col-sm-4">
                 <div id="profile" class="rounded-circle">
-                    <img src="{{user.profile.picture.url }}" alt="profile_photo">
+                    <img style="width: 120%; height: 120%;" src="{{user.profile.picture.url }}" alt="profile_photo">
                 </div>
             </div>
             <hr>
