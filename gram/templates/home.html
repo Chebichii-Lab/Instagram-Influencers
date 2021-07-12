@@ -3,13 +3,24 @@
 {% load bootstrap3 %}
 {% block content %}
 {{block.super}}
-<h1 style="text-align:center; font-size:20px;">INSTAGRAM INFLUENCERS</h1>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+<style>
+    #background{
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
+<h1 style="text-align:center; font-size:40px; font-family: 'Satisfy', cursive;">INSTAGRAM INFLUENCERS</h1>
 
 {% for post in posts%}
-<div class="container">
-    <div class="col-md-8" style="border-radius:1%;">
-        <div class="card m-3">
-            <img style="width: 450px; height:500px" src="{{post.image.url}}" class="img-thumbnail">
+<div class="container" id="background">
+    <div class="col-md-6" style="border-radius:1%;">
+        <div class="card m-3" style="padding-left: 100px;">
+            <img style="width: 450px; height:400px" src="{{post.image.url}}" class="img-thumbnail">
             <a href="/">
                 <p>{{post.comments.Count}}</p>
 
