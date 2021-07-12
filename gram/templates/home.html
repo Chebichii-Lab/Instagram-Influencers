@@ -14,13 +14,13 @@
         background-attachment: fixed;
     }
 </style>
-<h1 style="text-align:center; font-size:40px; font-family: 'Satisfy', cursive;">INSTAGRAM INFLUENCERS</h1>
+<h1 style="text-align:center; font-size:40px; font-family: 'Satisfy', cursive; font-weight: bold;">INSTAGRAM INFLUENCERS</h1>
 
 {% for post in posts%}
 <div class="container" id="background">
     <div class="col-md-6" style="border-radius:1%;">
-        <div class="card m-3" style="padding-left: 100px;">
-            <img style="width: 450px; height:400px" src="{{post.image.url}}" class="img-thumbnail">
+        <div class="card m-3" style="padding-left: 150px;">
+            <img style="width: 550px; height:400px" src="{{post.image.url}}" class="img-thumbnail">
             <a href="/">
                 <p>{{post.comments.Count}}</p>
 
@@ -28,7 +28,7 @@
             <img src="https://img.icons8.com/material-outlined/24/000000/filled-like.png"/>
             <img src="https://img.icons8.com/ios-glyphs/30/000000/filled-sent.png"/>
             <img src="https://img.icons8.com/material-outlined/24/000000/speech-bubble--v2.png"/>
-            <p><strong class="text-secondary pl-3">{{post.profile}} <br></strong> {{post.image_caption}}.</p>
+            <p style="font-size: 25px; color: white; font-family: 'Satisfy', cursive;"><strong class="text-secondary pl-3" >{{post.profile}} <br></strong> {{post.image_caption}}.</p>
             <br>
         </div>
     </div>
