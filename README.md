@@ -10,32 +10,27 @@ This is a Django Instagram clone application where, a user can sign up to have a
 To get the code, clone the repository: https://github.com/Chebichii-Lab/Instagram-Influencers.git
 Move to the folder and run the following commands;
 
-$ cd Instagram-Influencers
-$ pip install -r requirements.txt
+    $ cd Instagram-Influencers
+    $ pip install -r requirements.txt
 
 ### Install and activate the virtual environment
-
-$ python3.8 -m venv virtual
-$ source virtual/bin/activate
+    $ python3.8 -m venv virtual
+    $ source virtual/bin/activate
 
 ### Create a database
-
-$ psql
+    $ psql
 CREATE DATABASE (name-of-database)
 
 ### Make migrations
-
-$ python3.8 manage.py check
-$ python3.8 manage.py makemigrations (app-name)
-$ python3 manage.py migrate
+    $ python3.8 manage.py check
+    $ python3.8 manage.py makemigrations (app-name)
+    $ python3 manage.py migrate
 
 ### Testing the Application
-
-$ python3.8 manage.py test (app-name)
+    $ python3.8 manage.py test (app-name)
 
 ### Running the Application
-
-$ python3.8 manage.py runserver
+    $ python3.8 manage.py runserver
 
 Then once you are done, open your browser with the local host; 127.0.0.1:8000
 
@@ -56,7 +51,7 @@ Then once you are done, open your browser with the local host; 127.0.0.1:8000
 
 # Live Link
 
-[View Live Site.](https://instagram2.0.herokuapp.com/)
+[View Live Site.](https://insta254.herokuapp.com/)
 
 ## License
 
