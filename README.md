@@ -55,7 +55,7 @@ Then once you are done, open your browser with the local host; 127.0.0.1:8000
 
 ## License
 
-Instagram2.0 clone is under the [MIT](LICENSE) license.
+Instagram-Influencers is under the [MIT](LICENSE) license.
 
 
 
