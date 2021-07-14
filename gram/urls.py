@@ -11,7 +11,7 @@ urlpatterns=[
     url('login/', auth_views.LoginView.as_view(), name='login'),
     url('profile/', views.user_profile, name='profile'),
     url('profile_update/', views.profile_update, name='change_profile'),
-    url('newpost/', views.newPost, name='newPost'),
+    url(r'^new/image$', views.new_post, name='newpost'),
     url('search/', views.search_profile, name='search'),
 
 ]

@@ -57,27 +57,40 @@ def profile_update(request):
         user_form = UserUpdateForm(instance=request.user)
     return render(request, 'profile_edit.html', {"user_form":user_form,"profile_form": profile_form})
 
-@login_required(login_url='/accounts/login/')
-def newPost(request):
-    current_user = request.user
+# @login_required(login_url='/accounts/login/')
+# def newPost(request):
+#     current_user = request.user
     
-    if request.method == 'POST':
-        form = NewPostForm(request.POST, request.FILES)        
-        if form.is_valid():
-            image=form.cleaned_data.get('image')
-            image_caption=form.cleaned_data.get('image_caption')
-            image = Image(image = image,image_caption= image_caption)
-            image.save_image()
+#     if request.method == 'POST':
+#         form = NewPostForm(request.POST, request.FILES)        
+#         if form.is_valid():
+#             image=form.cleaned_data.get('image')
+#             image_caption=form.cleaned_data.get('image_caption')
+#             image = Image(image = image,image_caption= image_caption)
+#             image.save_image()
             
-        else:
-            print(form.errors)
+#         else:
+#             print(form.errors)
 
-        return redirect('home')
+#         return redirect('home')
 
+#     else:
+#         form = NewPostForm()
+#     return render(request, 'newPost.html', {"form": form})
+
+@login_required(login_url='/accounts/login/')
+def new_post(request):
+    profile= Profile.objects.get_or_create(user=request.user)
+    if request.method == 'POST':
+        form = NewPostForm(request.POST,request.FILES)
+        if form.is_valid():
+            image = form.save(commit = False)
+            image.profile = request.user.profile
+            image.save()
+            return redirect("home")
     else:
         form = NewPostForm()
-    return render(request, 'newPost.html', {"form": form})
-
+    return render (request, 'newPost.html', {"form":form})    
 
 def search_profile(request): 
     if 'searchUser' in request.GET and request.GET['searchUser']:
