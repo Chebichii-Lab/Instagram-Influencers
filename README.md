@@ -55,7 +55,7 @@ Then once you are done, open your browser with the local host; 127.0.0.1:8000
 
 ## License
 
-Instagram-Influencers is under the [MIT](LICENSE) license.
+This project is under the [MIT](LICENSE) license.
 
 
 
